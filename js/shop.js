@@ -98,7 +98,7 @@ function productCard(product) {
 
     const button = document.createElement("button");
     button.type = "button";
-    button.textContent = "Add to cart";
+    button.textContent = "Add to basket";
     button.dataset.id = product.id;
 
     card.append(image, name, price, button);
