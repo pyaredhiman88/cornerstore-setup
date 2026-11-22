@@ -1,0 +1,8 @@
+[
+    { "id": 1, "name": "Laptop", "price": 1200, "onSale": false, "image": "images/laptop.svg" },
+    { "id": 2, "name": "Headphones", "price": 89, "onSale": false, "image": "images/headphones.svg" },
+    { "id": 3, "name": "Backpack", "price": 45, "onSale": true, "image": "images/backpack.svg" },
+    { "id": 4, "name": "Desk Lamp", "price": 35, "onSale": false, "image": "images/lamp.svg" },
+    { "id": 5, "name": "Coffee Mug", "price": 12, "onSale": false, "image": "images/mug.svg" },
+    { "id": 6, "name": "Sneakers", "price": 70, "onSale": false, "image": "images/shoes.svg" }
+]

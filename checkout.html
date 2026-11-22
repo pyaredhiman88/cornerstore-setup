@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Checkout | Cornerstore</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <header>
+      <h1><a href="index.html">Cornerstore</a></h1>
+    </header>
+
+    <main>
+      <h2>Checkout</h2>
+      <form id="checkout" action="checkout.html" method="post" novalidate>
+        <fieldset>
+          <legend>Delivery address</legend>
+          <p>
+            <label for="fullname">Full name</label>
+            <input id="fullname" name="fullname" aria-describedby="fullname-error" type="text" autocomplete="name" required>
+            <span class="error" id="fullname-error"></span>
+          </p>
+          <p>
+            <label for="street">Street address</label>
+            <input id="street" name="street" aria-describedby="street-error" type="text" autocomplete="street-address" required>
+            <span class="error" id="street-error"></span>
+          </p>
+          <p>
+            <label for="city">City</label>
+            <input id="city" name="city" aria-describedby="city-error" type="text" autocomplete="address-level2" required>
+            <span class="error" id="city-error"></span>
+          </p>
+          <p>
+            <label for="postcode">Postcode</label>
+            <input id="postcode" name="postcode" aria-describedby="postcode-error" type="text" autocomplete="postal-code" required>
+            <span class="error" id="postcode-error"></span>
+          </p>
+        </fieldset>
+        <fieldset>
+          <legend>Delivery</legend>
+          <label><input type="radio" name="delivery" value="standard" checked> Standard, free over $50</label>
+          <label><input type="radio" name="delivery" value="express"> Express, $9</label>
+        </fieldset>
+        <p>
+          <label for="notes">Notes for the driver</label>
+          <textarea id="notes" name="notes" rows="3"></textarea>
+        </p>
+        <p class="error" id="cart-error"></p>
+        <button type="submit">Place order</button>
+        <p id="placed" hidden>Thanks! Your order is placed.</p>
+      </form>
+    </main>
+    <script type="module" src="js/checkout.js"></script>
+  </body>
+</html>

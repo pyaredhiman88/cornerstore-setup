@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laptop | Cornerstore</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Cornerstore</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="cart.html">Cart</a>
+            <a href="register.html">Create an account</a>
+        </nav>
+    </header>
+    <main class="product">
+        <img src="images/laptop.svg" width="480"
+             alt="A silver laptop with a blue screen">
+        <div>
+            <h2>Laptop</h2>
+            <p><strong>$1,200</strong></p>
+            <p>A light 14-inch laptop for school, work
+               and building your first store.</p>
+            <ul>
+                <li>14-inch screen</li>
+                <li>16 GB memory</li>
+                <li>512 GB storage</li>
+            </ul>
+            <form action="cart.html">
+                <label for="quantity">Quantity</label>
+                <input id="quantity" name="quantity" type="number"
+                       min="1" max="5" value="1">
+                <input type="hidden" name="product" value="laptop">
+                <button type="submit">Add to cart</button>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <p>Cornerstore, built during the AI-Native Full Stack course.</p>
+    </footer>
+</body>
+</html>

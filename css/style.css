@@ -1,0 +1,360 @@
+/* Cornerstore styles, built in Section 5. Mobile first: the base rules are for small screens, and media queries add to them. */
+
+/* 5.13: colours and sizes in one place */
+:root {
+    --brand: #1f6f54;
+    --brand-dark: #154d3a;
+    --ink: #1d232b;
+    --muted: #5b6573;
+    --paper: #f7f6f2;
+    --card: #ffffff;
+    --line: #e2e0d8;
+    --sale: #b42318;
+    --focus: #f2b705;
+    --radius: 12px;
+}
+
+/* 5.5: width includes padding and border */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* 5.1 and 5.4: the page */
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--ink);
+    background-color: var(--paper);
+}
+
+h2 {
+    font-size: 1.75rem;
+    line-height: 1.2;
+}
+
+a {
+    color: var(--brand-dark);
+}
+
+/* 5.6 and 5.7: the header sticks to the top, and Flexbox lays it out */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem 1.5rem;
+    padding: 1rem 1.5rem;
+    background-color: var(--brand);
+    color: #ffffff;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+header a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+nav {
+    display: flex;
+    gap: 1rem;
+}
+
+nav a {
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.2s;
+}
+
+/* 5.12: hover and keyboard focus */
+nav a:hover {
+    border-bottom-color: #ffffff;
+}
+
+:focus-visible {
+    outline: 3px solid var(--focus);
+    outline-offset: 2px;
+    /* 5.16: a dark inner ring, so the focus ring passes 3:1 on light backgrounds too (yellow alone is 1.68:1 on paper) */
+    box-shadow: 0 0 0 2px var(--ink);
+}
+
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1.5rem;
+}
+
+.hero p {
+    color: var(--muted);
+    font-size: 1.125rem;
+}
+
+/* 5.9 and 5.10: the product grid and its cards */
+.products {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.5rem;
+}
+
+.card {
+    position: relative;
+    padding: 1rem;
+    background-color: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.card img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.card h3 {
+    margin: 0.75rem 0 0.25rem;
+    font-size: 1.125rem;
+}
+
+.price {
+    margin: 0;
+    font-weight: 700;
+    color: var(--brand-dark);
+}
+
+/* 5.6: the badge sits on the card's corner */
+.badge {
+    position: absolute;
+    top: 0.75rem;
+    left: 0.75rem;
+    padding: 0.25rem 0.6rem;
+    border-radius: 999px;
+    background-color: var(--sale);
+    color: #ffffff;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+/* 5.17: buttons, forms and tables */
+button {
+    font: inherit;
+    padding: 0.65rem 1.25rem;
+    border: 0;
+    border-radius: 8px;
+    background-color: var(--brand);
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+form button {
+    margin-top: 1rem;
+}
+
+button:hover {
+    background-color: var(--brand-dark);
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+input,
+textarea {
+    font: inherit;
+    width: 100%;
+    max-width: 28rem;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #8a8f98;
+    border-radius: 6px;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    width: auto;
+}
+
+fieldset {
+    margin: 0 0 1.5rem;
+    padding: 1rem 1.25rem;
+    background-color: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+}
+
+fieldset label {
+    font-weight: 400;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--card);
+}
+
+caption {
+    text-align: left;
+    font-weight: 700;
+    padding: 0.5rem 0;
+}
+
+th,
+td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid var(--line);
+}
+
+tfoot th,
+tfoot td {
+    font-weight: 700;
+}
+
+.product img {
+    width: 100%;
+    max-width: 480px;
+    height: auto;
+}
+
+footer {
+    padding: 2rem 1.5rem;
+    text-align: center;
+    color: var(--muted);
+    border-top: 1px solid var(--line);
+}
+
+/* 5.11: bigger screens */
+@media (min-width: 700px) {
+    header {
+        padding: 1rem 2rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .product {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        align-items: start;
+    }
+}
+
+/* 7.2: switched on and off by JavaScript with classList */
+.picked {
+    outline: 4px solid var(--focus);
+    outline-offset: 4px;
+}
+
+/* Section 7: search, the cart and form errors */
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem 1rem;
+}
+
+.filters label {
+    margin: 0;
+}
+
+.filters input[type="search"] {
+    flex: 1 1 12rem;
+}
+
+.check {
+    font-weight: 400;
+}
+
+.card button {
+    margin-top: 0.75rem;
+    width: 100%;
+}
+
+.cart {
+    position: sticky;
+    top: 6rem;
+    align-self: start;
+    padding: 1rem 1.25rem;
+    background-color: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+}
+
+.cart h2 {
+    margin-top: 0;
+}
+
+#cart-items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#cart-items li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--line);
+}
+
+.cart-name {
+    flex: 1;
+}
+
+#cart-items button {
+    padding: 0.2rem 0.6rem;
+}
+
+#cart-items .remove {
+    padding: 0.2rem 0;
+    background-color: transparent;
+    color: var(--sale);
+    text-decoration: underline;
+}
+
+.totals {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 0.25rem;
+}
+
+.totals dd {
+    margin: 0;
+    font-weight: 700;
+}
+
+.error {
+    display: block;
+    color: var(--sale);
+    font-weight: 600;
+    margin: 0.25rem 0 0;
+}
+
+@media (min-width: 700px) {
+    .shop {
+        display: grid;
+        grid-template-columns: 1fr 20rem;
+        gap: 2rem;
+    }
+}

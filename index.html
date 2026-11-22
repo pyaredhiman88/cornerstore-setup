@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cornerstore</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Cornerstore</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="cart.html">Cart (<span id="cart-count">0</span>)</a>
+            <a href="register.html">Create an account</a>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <h2>Everything you need, one shop away</h2>
+            <p>Free delivery on orders of $50 or more.</p>
+        </section>
+        <section class="shop">
+            <div>
+                <h2>Products</h2>
+                <p class="filters">
+                    <label for="search">Search</label>
+                    <input id="search" type="search" placeholder="Mug, lamp, laptop...">
+                    <label for="sort">Sort by</label>
+                    <select id="sort">
+                        <option value="featured">Featured</option>
+                        <option value="price-asc">Price low to high</option>
+                        <option value="price-desc">Price high to low</option>
+                        <option value="name-asc">Name A to Z</option>
+                    </select>
+                    <label class="check"><input id="sale-only" type="checkbox"> On sale only</label>
+                </p>
+                <p id="search-summary" hidden>Showing results for <strong id="search-term"></strong></p>
+                <ul class="products" id="product-list"></ul>
+                <p id="no-results" hidden>No products match your search.</p>
+            </div>
+            <aside class="cart" aria-labelledby="cart-heading">
+                <h2 id="cart-heading">Your cart</h2>
+                <p id="cart-empty">Your cart is empty.</p>
+                <ul id="cart-items"></ul>
+                <dl class="totals">
+                    <dt>Subtotal</dt><dd id="subtotal">$0</dd>
+                    <dt>Shipping</dt><dd id="shipping">Free</dd>
+                    <dt>Total</dt><dd id="total">$0</dd>
+                </dl>
+                <p><a href="checkout.html">Go to checkout</a></p>
+            </aside>
+        </section>
+    </main>
+    <footer>
+        <p>Cornerstore, built during the AI-Native Full Stack course.</p>
+    </footer>
+    <script type="module" src="js/shop.js"></script>
+</body>
+</html>
